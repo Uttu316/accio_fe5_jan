@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Finder</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;0,6..96,900;1,6..96,600&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Slab:ital,wght@0,100;1,400&family=Oswald:wght@200..700&family=Pacifico&family=Poppins:ital,wght@0,100;1,200&family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./styles/main.css" rel="stylesheet" />
+    <link href="./styles/home.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo">ViFi</h1>
+      <nav class="nav_container">
+        <a href="#about"> About </a>
+        <a href="#channels"> Channels </a>
+        <a href="#playlists">Playlists</a>
+      </nav>
+    </header>
+
+    <section class="hero_section">
+      <h2 class="hero_title">Video Finder</h2>
+    </section>
+
+    <section class="detail_container">
+      <div class="detai_title_container">
+        <h3 class="detail_container_title">Videos</h3>
+      </div>
+
+      <div class="filter_section"></div>
+      <div class="videos_container" id="videos">
+        <div class="video_card">
+          <div class="video_img">
+            <img
+              src="https://i.ytimg.com/vi/75hqPk6pq5g/sddefault.jpg"
+              alt="title"
+            />
+          </div>
+          <div class="video_content">
+            <p class="video_title">Video Title</p>
+            <p class="video_creator">Creator Name</p>
+            <p class="video_publish">2 days ago</p>
+            <div class="video_stats">
+              <span class="video_stat_like"> ♡ 242</span>
+              <span class="video_stat_comment"> 💬 123 </span>
+            </div>
+            <p class="video_views">👁️ 1231 views</p>
+            <div class="video_tags">
+              <span class="video_tag"> #javascript </span>
+              <span class="video_tag"> #html </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="detail_container" id="playlists">
+      <div class="detai_title_container">
+        <h3 class="detail_container_title">Playlists</h3>
+      </div>
+    </section>
+    <section class="detail_container" id="channels">
+      <div class="detai_title_container">
+        <h3 class="detail_container_title">Channels</h3>
+      </div>
+    </section>
+    <section class="detail_container" id="about">
+      <div class="detai_title_container">
+        <h3 class="detail_container_title">About</h3>
+      </div>
+    </section>
+    <footer class="footer">Made by Accio Team</footer>
+
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
