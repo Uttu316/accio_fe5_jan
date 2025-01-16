@@ -32,27 +32,9 @@
 
       <div class="filter_section"></div>
       <div class="videos_container" id="videos">
-        <div class="video_card">
-          <div class="video_img">
-            <img
-              src="https://i.ytimg.com/vi/75hqPk6pq5g/sddefault.jpg"
-              alt="title"
-            />
-          </div>
-          <div class="video_content">
-            <p class="video_title">Video Title</p>
-            <p class="video_creator">Creator Name</p>
-            <p class="video_publish">2 days ago</p>
-            <div class="video_stats">
-              <span class="video_stat_like"> ♡ 242</span>
-              <span class="video_stat_comment"> 💬 123 </span>
-            </div>
-            <p class="video_views">👁️ 1231 views</p>
-            <div class="video_tags">
-              <span class="video_tag"> #javascript </span>
-              <span class="video_tag"> #html </span>
-            </div>
-          </div>
+        <div class="no_video_wraper" id="no_video_container">
+          <p>No Video Available!</p>
+          <button id="reload_videos_btn">Retry</button>
         </div>
       </div>
     </section>
@@ -73,6 +55,7 @@
     </section>
     <footer class="footer">Made by Accio Team</footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="./scripts/main.js"></script>
   </body>
 </html>
