@@ -203,3 +203,24 @@
 .no_video_wraper button:hover{
   background-color: rgb(230, 120, 108);
 }
+.filter_section{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+ 
+}
+.filter_label{
+  font-family: Arial, Helvetica, sans-serif;
+}
+#video_search, #category_filter{
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4px;
+  text-transform: capitalize;
+}
+#category_filter option{
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+}

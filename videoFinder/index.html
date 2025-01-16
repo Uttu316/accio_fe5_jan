@@ -30,12 +30,21 @@
         <h3 class="detail_container_title">Videos</h3>
       </div>
 
-      <div class="filter_section"></div>
-      <div class="videos_container" id="videos">
-        <div class="no_video_wraper" id="no_video_container">
-          <p>No Video Available!</p>
-          <button id="reload_videos_btn">Retry</button>
+      <div class="filter_section">
+        <div class="filters">
+          <span class="filter_label"> Filter By: </span>
+          <select id="category_filter">
+            <option value="" disabled selected>Select Category</option>
+            <option value="all">All</option>
+          </select>
         </div>
+        <div class="search_container">
+          <input placeholder="Search video" type="search" id="video_search" />
+        </div>
+      </div>
+      <div class="videos_container" id="videos"></div>
+      <div class="no_video_wraper" id="no_video_container">
+        <p>No Video Available!</p>
       </div>
     </section>
     <section class="detail_container" id="playlists">

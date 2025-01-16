@@ -19,6 +19,7 @@ async function api(config) {
   }
 }
 
+let videosData = [];
 async function getVideos() {
   try {
     const res = await api({
@@ -26,13 +27,33 @@ async function getVideos() {
     });
     if (res && res.data) {
       const videos = res.data;
+      videosData = videos;
       showVideos(videos);
+      createFilterOptions();
+      enableSearch();
     }
   } catch (e) {
     console.log(e);
   }
 }
 
+function createFilterOptions() {
+  let allTags = [];
+  videosData.forEach((item) => {
+    const tags = item.items.snippet.tags;
+    if (tags) {
+      allTags = [...allTags, ...tags];
+    }
+  });
+
+  let tagsOptions = Array.from(new Set(allTags));
+
+  let options = tagsOptions.sort().map((tag) => {
+    return $(`<option value="${tag}">${tag} </option>`);
+  });
+  $("#category_filter").append(options);
+  onChangeCategoryFilter();
+}
 function showVideos(videos) {
   if (Array.isArray(videos) && videos.length) {
     const videosContainer = $("#videos");
@@ -88,11 +109,11 @@ function createVideoCard(video) {
   return cardEl;
 }
 
-function showNotAvailable(id) {
+function showNotAvailable(id = "#no_video_container") {
   $(id).show();
 }
 
-function hideNotAvailable(id) {
+function hideNotAvailable(id = "#no_video_container") {
   $(id).hide();
 }
 
@@ -118,6 +139,50 @@ function timeDifference(previous, current = new Date()) {
   } else {
     return "" + Math.round(elapsed / msPerYear) + " years ago";
   }
+}
+function clearVideos() {
+  $("#videos").empty();
+}
+
+function onChangeCategoryFilter() {
+  $("#category_filter").on("change", function (e) {
+    const value = e.target.value;
+    $("#video_search")[0].value = "";
+    hideNotAvailable();
+    if (value === "all") {
+      clearVideos();
+      showVideos(videosData);
+    } else {
+      let tagVideos = videosData.filter((i) =>
+        i.items.snippet.tags?.includes(value)
+      );
+      clearVideos();
+      showVideos(tagVideos);
+    }
+  });
+}
+
+function enableSearch() {
+  $("#video_search").on("input", function (e) {
+    $("#category_filter")[0].value = "";
+    const value = e.target.value;
+    if (value === "") {
+      clearVideos();
+      hideNotAvailable();
+      showVideos(videosData);
+    } else {
+      let tagVideos = videosData.filter((i) =>
+        i.items.snippet.title.toLowerCase().includes(value.toLowerCase())
+      );
+      clearVideos();
+      hideNotAvailable();
+      if (tagVideos.length === 0) {
+        showNotAvailable();
+      } else {
+        showVideos(tagVideos);
+      }
+    }
+  });
 }
 
 getVideos();
