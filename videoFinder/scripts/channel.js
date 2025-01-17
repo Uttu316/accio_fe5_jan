@@ -16,7 +16,7 @@ const getChannel = async () => {
   }
 };
 function showChannels(channels) {
-  const channelsContainer = $("#channels");
+  const channelsContainer = $("#channels_box");
   const cards = createChannelsCard(channels);
   channelsContainer.append(cards);
 }
