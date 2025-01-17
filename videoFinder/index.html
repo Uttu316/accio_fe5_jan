@@ -47,9 +47,13 @@
         <p>No Video Available!</p>
       </div>
     </section>
-    <section class="detail_container" id="playlists">
+    <section class="detail_container">
       <div class="detai_title_container">
         <h3 class="detail_container_title">Playlists</h3>
+      </div>
+      <div class="videos_container" id="playlists"></div>
+      <div class="no_video_wraper" id="no_playlist_container">
+        <p>No Playlist Available!</p>
       </div>
     </section>
     <section class="detail_container" id="channels">
@@ -61,10 +65,17 @@
       <div class="detai_title_container">
         <h3 class="detail_container_title">About</h3>
       </div>
+      <div class="videos_container" id="channels"></div>
+      <div class="no_video_wraper" id="no_channel_container">
+        <p>No Channels Available!</p>
+      </div>
     </section>
     <footer class="footer">Made by Accio Team</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/home.js" type="module"></script>
+    <script src="./scripts/playlist.js" type="module"></script>
+    <script src="./scripts/channel.js" type="module"></script>
   </body>
 </html>

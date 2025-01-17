@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module</title>
+  </head>
+  <body>
+    <h1>Learn Module</h1>
+    <h2>type="module"</h2>
+    <ul>
+      <li>run js file in isolate context</li>
+      <li>js file does not share variables in global space</li>
+      <li>export and import can be done to any variable</li>
+      <li>named export and default export</li>
+      <li>there always only one default export in each file while importing</li>
+
+      <li>
+        use same name of named export variables give any name to default export
+        variable
+      </li>
+      <li>alias can be done of named exports by using as keyword</li>
+
+      <li>
+        import all exported variable form a file using * as Anyname and use it
+        Anyname.variable
+      </li>
+    </ul>
+    <input value="" id="name" />
+
+    <script type="module" src="./a.js"></script>
+    <script type="module" src="./b.js"></script>
+  </body>
+</html>
