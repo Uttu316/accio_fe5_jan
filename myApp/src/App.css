@@ -1,0 +1,23 @@
+.bg {
+
+  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/011/873/551/small_2x/howling-ghosts-in-cemetery-flat-color-illustration-scary-graveyard-tombstones-for-fall-festival-fully-editable-2d-simple-cartoon-characters-with-spooky-halloween-night-on-background-vector.jpg');
+  
+  background-repeat: no-repeat;
+  
+  background-size: cover;
+  
+  /* width: 100%; */
+  
+  height: 100vh;
+  
+  display: flex;
+  
+  align-items: center;
+  
+  justify-content: center;
+  
+  color: rgb(211, 35, 35);
+  
+  font-size: 100px;
+  
+  }
