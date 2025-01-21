@@ -1,0 +1,11 @@
+
+
+.inbox{
+    display: flex;
+    flex-direction: column;
+    margin: 40px auto;
+    box-shadow: 4px 4px 4px #ccc;
+    width: 380px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}

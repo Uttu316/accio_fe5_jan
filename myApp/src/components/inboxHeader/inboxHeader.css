@@ -1,0 +1,10 @@
+
+.inboxHeader{
+    background-color: rgb(18, 170, 170);
+    padding: 8px 10px;
+    color: white;
+}
+
+.inboxHeaderName{
+    font-size:22px;
+}

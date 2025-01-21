@@ -1,0 +1,23 @@
+
+
+.footer{
+    background-color: teal;
+    padding: 10px 16px;
+    text-align: center;
+    margin-top: 40px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer_txt{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer_img{
+    height: 25px;
+    width: 25px;
+    margin-left: 4px;
+    vertical-align: middle;
+}

@@ -1,0 +1,30 @@
+.inboxFooter {
+  width: 100%;
+  background-color: rgb(18, 170, 170);
+  padding: 4px 10px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+.inboxInput {
+  flex: 1;
+  padding: 6px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+}
+.inboxInput:focus{
+    outline: none
+}
+.inboxBtn{
+    padding: 7px;
+    color: white;
+    background-color: salmon;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
