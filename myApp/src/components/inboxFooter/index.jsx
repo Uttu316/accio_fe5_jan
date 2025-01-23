@@ -19,7 +19,7 @@ const InboxFooter = (props) => {
       const currTime = new Date().getTime();
       const newMsg = {
         userName: "Me",
-        isBot: false,
+        isBot: currTime % 2 == 0,
         time: currTime,
         text: msg,
         id: parseInt(Math.random() * 10000),
