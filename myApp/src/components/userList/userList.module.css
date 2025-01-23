@@ -1,0 +1,28 @@
+
+
+
+.userListContainer{
+    margin: 60px;
+}
+.userListHeading{
+    text-align: center;
+    color: salmon;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.userListHeading::after{
+    content: '';
+    position: relative;
+    width: 100px;
+    height: 2px;
+    background-color: teal;
+    display: block;
+    margin: 4px auto;
+}
+
+.userList{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 40px ;
+    justify-content: center;
+}

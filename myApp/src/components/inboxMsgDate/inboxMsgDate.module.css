@@ -1,0 +1,21 @@
+
+
+
+.msgDateBox{
+    margin: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 8px;
+}
+.msgDateText{
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    background-color: floralwhite;
+    display: inline-block;
+    padding: 4px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px #ccc;
+}

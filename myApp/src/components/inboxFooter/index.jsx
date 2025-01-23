@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./inboxFooter.module.css";
+import { getStartOfDayTime } from "../../utils/timeFormatters";
 
 const InboxFooter = (props) => {
   const { setMsgs } = props;
@@ -15,12 +16,14 @@ const InboxFooter = (props) => {
     e.preventDefault();
 
     if (msg && msg.length) {
+      const currTime = new Date().getTime();
       const newMsg = {
-        name: "Me",
+        userName: "Me",
         isBot: false,
-        time: new Date().getTime(),
+        time: currTime,
         text: msg,
         id: parseInt(Math.random() * 10000),
+        date: getStartOfDayTime(currTime),
       };
 
       setMsgs((currMsgs) => [...currMsgs, newMsg]);

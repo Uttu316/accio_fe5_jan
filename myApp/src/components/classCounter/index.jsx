@@ -1,4 +1,5 @@
 import { Component } from "react";
+import LifeCycle from "../lifeCycle";
 
 class ClassCounter extends Component {
   constructor() {
@@ -25,6 +26,7 @@ class ClassCounter extends Component {
         <h1> Counter {this.state.count} </h1>
         <button onClick={this.onAdd}>Add</button>
         <button onClick={this.onSub}>Sub</button>
+        {this.state.count <= 5 && <LifeCycle />}
       </div>
     );
   }

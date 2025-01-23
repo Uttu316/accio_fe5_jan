@@ -5,3 +5,5 @@ const x = 10;
 A.getName();
 A.default();
 console.log(A.x, A.y);
+
+console.log(xyz);
