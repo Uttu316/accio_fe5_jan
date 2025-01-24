@@ -26,3 +26,12 @@
     margin: 40px ;
     justify-content: center;
 }
+.notAvailMsg{
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.errorMsg{
+    color: rgb(230, 95, 80);
+    font-family: Arial, Helvetica, sans-serif;
+}

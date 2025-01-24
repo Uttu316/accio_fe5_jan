@@ -1,5 +1,6 @@
 import { get12Hour } from "../../utils/timeFormatters";
 import styles from "./inboxMsg.module.css";
+import Markdown from "react-markdown";
 
 const InboxMsg = (props) => {
   const { text, userName, isBot, time } = props;
@@ -14,7 +15,8 @@ const InboxMsg = (props) => {
         <span className={styles.msgName}>{userName}</span>
         <span className={styles.msgTime}>{displayTime}</span>
       </p>
-      <p className={styles.msgTxt}>{text}</p>
+
+      <Markdown className={styles.msgTxt}>{text}</Markdown>
     </div>
   );
 };

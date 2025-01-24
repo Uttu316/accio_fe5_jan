@@ -1,26 +1,42 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Loader from "../loaders";
 import styles from "./userList.module.css";
+import Users from "../users";
+import fetchUsers from "../../services/userServices/fetchUsers";
 
 const UserList = () => {
   const [status, setStatus] = useState("");
+  const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    setStatus("loading");
-    setTimeout(() => {
+  const isLoading = status === "loading";
+  const isError = status === "error";
+  const isDone = status === "done";
+  const isEmpty = isDone && !users.length;
+  const hasUsers = isDone && !!users.length;
+
+  const getUsers = useCallback(async () => {
+    try {
+      setStatus("loading");
+      const users = await fetchUsers();
+      setUsers(users);
       setStatus("done");
-    }, 2000);
+    } catch (e) {
+      setStatus("error");
+    }
   }, []);
 
   useEffect(() => {
-    console.log(status);
-  }, [status]);
+    getUsers();
+  }, []);
 
   return (
     <div className={styles.userListContainer}>
       <h2 className={styles.userListHeading}>Users</h2>
       <div className={styles.userList}>
-        <Loader />
+        {isLoading && <Loader />}
+        {hasUsers && <Users users={users} />}
+        {isEmpty && <h2 className={styles.notAvailMsg}>Users Not Available</h2>}
+        {isError && <h2 className={styles.errorMsg}>Something Went Wrong</h2>}
       </div>
     </div>
   );

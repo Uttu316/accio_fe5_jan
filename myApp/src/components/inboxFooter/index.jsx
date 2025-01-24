@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./inboxFooter.module.css";
-import { getStartOfDayTime } from "../../utils/timeFormatters";
+import { createMsg, generateAIMsg } from "../../utils/chatUtil";
 
 const InboxFooter = (props) => {
   const { setMsgs } = props;
@@ -12,22 +12,17 @@ const InboxFooter = (props) => {
     setMsg(value);
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     if (msg && msg.length) {
-      const currTime = new Date().getTime();
-      const newMsg = {
-        userName: "Me",
-        isBot: currTime % 2 == 0,
-        time: currTime,
-        text: msg,
-        id: parseInt(Math.random() * 10000),
-        date: getStartOfDayTime(currTime),
-      };
-
+      const newMsg = createMsg({ msg });
       setMsgs((currMsgs) => [...currMsgs, newMsg]);
       setMsg("");
+
+      const AIMsg = await generateAIMsg(msg);
+      const newAIMsg = createMsg({ msg: AIMsg, isBot: true, userName: "Bot" });
+      setMsgs((currMsgs) => [...currMsgs, newAIMsg]);
     }
   };
 
