@@ -5,7 +5,12 @@ const Users = ({ users }) => {
   return (
     <React.Fragment>
       {users.map((item) => (
-        <UserCard key={item.id} userName={item.userName} photo={item.photo} />
+        <UserCard
+          key={item.id}
+          id={item.id}
+          userName={item.userName}
+          photo={item.photo}
+        />
       ))}
     </React.Fragment>
   );

@@ -22,6 +22,12 @@
     color: teal;
     font-weight: bold;
     flex:1;
+    display: inline-block;
+    max-width: 56px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .msgTxt{
     color: gray;

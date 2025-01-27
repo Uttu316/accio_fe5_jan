@@ -3,8 +3,37 @@
     background-color: rgb(18, 170, 170);
     padding: 8px 10px;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.inboxHederUserInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.inboxHeaderPhoto{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: relative;
+}
+.inboxHeaderPhoto img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
 }
 
 .inboxHeaderName{
     font-size:22px;
+}
+.inboxLoginStatus{
+    height: 6px;
+    width: 6px;
+    display: inline-block;
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0px;
+    right: 4px;
 }

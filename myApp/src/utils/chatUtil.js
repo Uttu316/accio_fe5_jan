@@ -1,4 +1,4 @@
-import GeminiModel from "../components/ai/gemini";
+import GeminiModel from "../ai/gemini";
 import { getStartOfDayTime } from "./timeFormatters";
 
 const createMsg = ({ msg, isBot = false, userName = "Me" }) => {

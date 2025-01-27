@@ -3,7 +3,8 @@ import styles from "./inboxFooter.module.css";
 import { createMsg, generateAIMsg } from "../../utils/chatUtil";
 
 const InboxFooter = (props) => {
-  const { setMsgs } = props;
+  const { setMsgs, user } = props;
+  const { userName } = user;
 
   const [msg, setMsg] = useState("");
 
@@ -21,7 +22,11 @@ const InboxFooter = (props) => {
       setMsg("");
 
       const AIMsg = await generateAIMsg(msg);
-      const newAIMsg = createMsg({ msg: AIMsg, isBot: true, userName: "Bot" });
+      const newAIMsg = createMsg({
+        msg: AIMsg,
+        isBot: true,
+        userName: userName,
+      });
       setMsgs((currMsgs) => [...currMsgs, newAIMsg]);
     }
   };

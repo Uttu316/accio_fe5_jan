@@ -3,14 +3,12 @@ import Loader from "../loaders";
 import styles from "./userList.module.css";
 import Users from "../users";
 import fetchUsers from "../../services/userServices/fetchUsers";
+import useAPIStatus from "../../hooks/useApiStatus";
 
 const UserList = () => {
-  const [status, setStatus] = useState("");
+  const { setStatus, isDone, isLoading, isError } = useAPIStatus();
   const [users, setUsers] = useState([]);
 
-  const isLoading = status === "loading";
-  const isError = status === "error";
-  const isDone = status === "done";
   const isEmpty = isDone && !users.length;
   const hasUsers = isDone && !!users.length;
 

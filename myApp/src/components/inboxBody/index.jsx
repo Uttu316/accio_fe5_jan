@@ -13,6 +13,12 @@ const InboxBody = (props) => {
     const el = ref.current;
     el.scrollTop = el.scrollHeight;
   }, [msgs.length]);
+
+  useEffect(() => {
+    return () => {
+      window.dates = {};
+    };
+  }, []);
   return (
     <div ref={ref} className="inboxBody">
       {isAnyMessage &&

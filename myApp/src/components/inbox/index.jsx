@@ -4,21 +4,14 @@ import InboxFooter from "../inboxFooter";
 import InboxHeader from "../inboxHeader";
 import "./inbox.css";
 
-const Inbox = () => {
-  const currentUser = useMemo(() => {
-    return {
-      userName: "Bot",
-      id: 12,
-    };
-  }, []);
-
+const Inbox = ({ userData }) => {
   const [msgs, setMsgs] = useState([]);
 
   return (
     <div className="inbox">
-      <InboxHeader user={currentUser} />
+      <InboxHeader user={userData} />
       <InboxBody msgs={msgs} />
-      <InboxFooter setMsgs={setMsgs} />
+      <InboxFooter user={userData} setMsgs={setMsgs} />
     </div>
   );
 };
