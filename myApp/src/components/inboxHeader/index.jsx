@@ -1,13 +1,10 @@
-import { useEffect } from "react";
+import { useContext } from "react";
 import "./inboxHeader.css";
-const InboxHeader = (props) => {
-  const { user } = props;
-  const { userName, photo } = user;
+import { ChatContext } from "../../context/chatProvider";
+const InboxHeader = () => {
+  const { userData } = useContext(ChatContext);
+  const { userName, photo } = userData;
   const isOnline = true;
-
-  useEffect(() => {
-    console.log("user in header changed");
-  }, [user]);
 
   return (
     <div className="inboxHeader">

@@ -4,6 +4,7 @@ import fetchUser from "../../services/userServices/fetchUser";
 import { useEffect, useState } from "react";
 import useAPIStatus from "../../hooks/useApiStatus";
 import PageContainer from "../../components/pageContainer";
+import ChatProvider from "../../context/chatProvider";
 
 const Chat = () => {
   const { setStatus, isDone, isLoading, isError } = useAPIStatus();
@@ -30,10 +31,12 @@ const Chat = () => {
 
   return (
     <PageContainer id={"chat"} title="Chat">
-      {isLoading && <h2>Loading....</h2>}
-      {validUser && <Inbox userData={user} />}
-      {inValiduser && <h2>User is not Valid</h2>}
-      {isError && <h2>Something went wrong</h2>}
+      <ChatProvider userData={user}>
+        {isLoading && <h2>Loading....</h2>}
+        {validUser && <Inbox />}
+        {inValiduser && <h2>User is not Valid</h2>}
+        {isError && <h2>Something went wrong</h2>}
+      </ChatProvider>
     </PageContainer>
   );
 };

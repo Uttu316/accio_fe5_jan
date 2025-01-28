@@ -1,12 +1,11 @@
 import PageContainer from "../../components/pageContainer";
 import UserList from "../../components/userList";
 
-const Home = () => {
+const Inbox = () => {
   return (
-    <PageContainer id={"home"} title="Home">
-      <h1>Home Page</h1>
+    <PageContainer id="inbox" title="Inbox">
+      <UserList />
     </PageContainer>
   );
 };
-
-export default Home;
+export default Inbox;

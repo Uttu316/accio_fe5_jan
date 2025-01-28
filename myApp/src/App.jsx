@@ -5,6 +5,8 @@ import Team from "./pages/team";
 import Contact from "./pages/contact";
 import Chat from "./pages/chat";
 import NotFound from "./pages/notFound";
+import Inbox from "./pages/inbox";
+import Signin from "./pages/signin";
 
 const App = () => {
   return (
@@ -14,8 +16,9 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/team" element={<Team />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/signin" element={<Signin />} />
         <Route path="/chat/:userid" element={<Chat />} />
-
+        <Route path="/inbox" element={<Inbox />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

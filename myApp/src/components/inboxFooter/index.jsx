@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./inboxFooter.module.css";
 import { createMsg, generateAIMsg } from "../../utils/chatUtil";
+import { ChatContext } from "../../context/chatProvider";
 
 const InboxFooter = (props) => {
-  const { setMsgs, user } = props;
-  const { userName } = user;
+  const { setMsgs } = props;
+  const { userData } = useContext(ChatContext);
+  const { userName } = userData;
 
   const [msg, setMsg] = useState("");
 

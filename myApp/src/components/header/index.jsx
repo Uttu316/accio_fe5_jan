@@ -11,6 +11,7 @@ const Header = (props) => {
       </h1>
       <nav className="nav">
         <ul className="nav_items">
+          <NavItem to="/signin" label={"Signin"} />
           <NavItem to="/about" label={"About"} />
           <NavItem to="/team" label={"Team"} />
           <NavItem to="/contact" label={"Contact"} />

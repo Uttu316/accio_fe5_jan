@@ -6,4 +6,6 @@
     height: 50vh;
     background-color: floralwhite;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
