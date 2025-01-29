@@ -1,12 +1,12 @@
 import { Navigate, Outlet } from "react-router";
 import { isLoggedIn } from "../utils/authUtil";
 
-const PrivateRoute = () => {
+const ProtectedRoute = () => {
   const isLogIn = isLoggedIn();
 
-  if (!isLogIn) return <Navigate to="/signin" replace={true} />;
+  if (isLogIn) return <Navigate to="/" replace={true} />;
 
   return <Outlet />;
 };
 
-export default PrivateRoute;
+export default ProtectedRoute;

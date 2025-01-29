@@ -59,4 +59,7 @@
   .btn:hover{
       background-color: #cd0610;
   }
-  
+  .btn:disabled{
+    background-color: #670308;
+    cursor: no-drop;
+  }

@@ -1,13 +1,19 @@
 import { useState } from "react";
 import styles from "./signin.module.css";
 import PageContainer from "../../components/pageContainer";
+import signin from "../../services/authServices/signin";
+import useAPIStatus from "../../hooks/useApiStatus";
+import { useNavigate } from "react-router";
 
+const inputs = {
+  username: "",
+  password: "",
+  remember: false,
+};
 const Signin = () => {
-  const [state, setState] = useState({
-    email: "",
-    password: "",
-    remember: false,
-  });
+  const navigate = useNavigate();
+  const { isLoading, setStatus } = useAPIStatus();
+  const [state, setState] = useState(inputs);
 
   const onInput = (e) => {
     let { name, value } = e.target;
@@ -19,20 +25,38 @@ const Signin = () => {
     setState({ ...state, [name]: value });
   };
 
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      setStatus("loading");
+      await signin(state);
+      setStatus("done");
+      navigate("/inbox", {
+        replace: true,
+      });
+    } catch (e) {
+      setStatus("error");
+      alert("Invalid user");
+    } finally {
+      setState(inputs);
+    }
+  };
+
   return (
     <PageContainer id="signin" title="Login">
       <div className={styles.formWrapper}>
         <div className={styles.formtitle}>Sign in</div>
-        <form className={styles.formContainer}>
+        <form onSubmit={onSubmit} className={styles.formContainer}>
           <div className={styles.inputItem}>
             <input
-              value={state.email}
+              value={state.username}
               onChange={onInput}
-              name="email"
+              name="username"
               className={styles.input}
             />
-            <label htmlFor="email" className={styles.inputItemLabel}>
-              Email
+            <label htmlFor="username" className={styles.inputItemLabel}>
+              Username
             </label>
           </div>
           <div className={styles.inputItem}>
@@ -56,7 +80,9 @@ const Signin = () => {
             />
             <label htmlFor="remember"> Remember this</label>
           </div>
-          <button className={styles.btn}>Signin</button>
+          <button disabled={isLoading} className={styles.btn}>
+            Signin
+          </button>
         </form>
       </div>
     </PageContainer>

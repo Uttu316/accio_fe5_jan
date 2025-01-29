@@ -2,7 +2,7 @@ import api from "..";
 
 const fetchUsers = async () => {
   const res = await api({
-    endpoint: "/randomusers",
+    endpoint: "/public/randomusers",
   });
 
   if (res && res.data && res.data.length) {

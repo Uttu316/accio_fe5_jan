@@ -2,7 +2,7 @@ import api from "..";
 
 const fetchUser = async (userid) => {
   const res = await api({
-    endpoint: `/randomusers/${userid}`,
+    endpoint: `/public/randomusers/${userid}`,
   });
 
   if (!res) return null;
