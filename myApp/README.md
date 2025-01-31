@@ -19,6 +19,8 @@ Currently, two official plugins are available:
 7. https://github.com/acciojob/todo-react-Uttu316
 8. https://github.com/acciojob/conditional-weather-report-Uttu316
 9. https://github.com/acciojob/render-component-react-Uttu316
+10. https://github.com/acciojob/react-router-Uttu316
+11. https://github.com/acciojob/routing-people-Uttu316
 
 ### Visit Project
 
