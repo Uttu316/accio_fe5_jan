@@ -12,6 +12,13 @@ Currently, two official plugins are available:
 
 1. https://github.com/acciojob/button-counter-Uttu316
 2. https://github.com/acciojob/personal-greeting-Uttu316
+3. https://github.com/acciojob/markdown-Uttu316
+4. https://github.com/acciojob/react-memo-Uttu316
+5. https://github.com/acciojob/tours-Uttu316
+6. https://github.com/acciojob/menu-Uttu316
+7. https://github.com/acciojob/todo-react-Uttu316
+8. https://github.com/acciojob/conditional-weather-report-Uttu316
+9. https://github.com/acciojob/render-component-react-Uttu316
 
 ### Visit Project
 
